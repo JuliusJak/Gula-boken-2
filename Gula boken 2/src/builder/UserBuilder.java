@@ -19,7 +19,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder age(int age) {
+    public UserBuilder age(String age) {
         user.setAge(age);
         return this;
     }
@@ -34,7 +34,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder postalCode(int postalCode) {
+    public UserBuilder postalCode(String postalCode) {
         user.setPostalCode(postalCode);
         return this;
     }
@@ -44,7 +44,7 @@ public class UserBuilder {
         return this;
     }
 
-    public UserBuilder portNumber(int portNumber) {
+    public UserBuilder portNumber(String portNumber) {
         user.setPortNumber(portNumber);
         return this;
     }

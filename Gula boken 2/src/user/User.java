@@ -4,12 +4,12 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private int age;
+    private String age;
     private String phoneNumber;
     private String city;
-    private int postalCode;
+    private String postalCode;
     private String streetName;
-    private int portNumber;
+    private String portNumber;
 
     public String getFirstName() {
         return firstName;
@@ -27,11 +27,11 @@ public class User {
         this.lastName = lastName;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -51,11 +51,11 @@ public class User {
         this.city = city;
     }
 
-    public int getPostalCode() {
+    public String getPostalCode() {
         return postalCode;
     }
 
-    public void setPostalCode(int postalCode) {
+    public void setPostalCode(String postalCode) {
         this.postalCode = postalCode;
     }
 
@@ -67,11 +67,11 @@ public class User {
         this.streetName = streetName;
     }
 
-    public int getPortNumber() {
+    public String getPortNumber() {
         return portNumber;
     }
 
-    public void setPortNumber(int portNumber) {
+    public void setPortNumber(String portNumber) {
         this.portNumber = portNumber;
     }
 }

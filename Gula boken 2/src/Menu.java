@@ -33,6 +33,7 @@ public class Menu {
 
                             case "2" -> {
                                 System.out.println("Searching for profile");
+                                p.searchProfile();
                             }
 
                             case "3" -> {
@@ -76,6 +77,7 @@ public class Menu {
 
                                 case "2" -> {
                                     System.out.println("Searching for profile");
+                                    p.searchProfile();
                                 }
 
                                 case "3" -> {

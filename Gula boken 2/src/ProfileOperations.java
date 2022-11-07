@@ -12,4 +12,7 @@ public interface ProfileOperations {
     void editProfile();
     void addProfile();
     User createProfile();
+    void searchProfile();
+
+
 }
