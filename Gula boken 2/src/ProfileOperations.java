@@ -8,7 +8,7 @@ public interface ProfileOperations {
     List<User> usersList = new ArrayList<>();
 
     void showList();
-    int removeProfile();
+    void removeProfile();
     void editProfile();
     void addProfile();
     User createProfile();

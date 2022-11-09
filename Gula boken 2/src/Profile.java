@@ -57,15 +57,18 @@ public class Profile implements ProfileOperations{
     public void editProfile() {
 
         Scanner scanner = new Scanner(System.in);
+
         System.out.println();
-        System.out.println("Which profile do you want to edit?");
+        System.out.println("Search for the profile you want to edit?");
+        searchProfile();
         System.out.println("Enter the index number of the profile you wish to edit:");
-        System.out.println("currently "+ usersList.size() +" profiles in the list");
 
         int profileIndex = scanner.nextInt();
 
 
-        String completeProfile =
+        if (profileIndex < usersList.size()) {
+
+            String completeProfile =
                 "Firstname: "+usersList.get(profileIndex).getFirstName()+
                         "\nLastname: "+usersList.get(profileIndex).getLastName()+
                         "\nAge: "+usersList.get(profileIndex).getAge()+
@@ -74,83 +77,108 @@ public class Profile implements ProfileOperations{
                         "\nPostal code: "+usersList.get(profileIndex).getPostalCode()+
                         "\nStreet name: "+usersList.get(profileIndex).getStreetName()+
                         "\nPort Number: "+usersList.get(profileIndex).getPortNumber();
-        System.out.println();
-        System.out.println(completeProfile);
-        System.out.println();
+            System.out.println();
+            System.out.println(completeProfile);
+            System.out.println();
 
-        System.out.println("Is this the profile you want to edit?");
-        System.out.println("Y/N");
-        String answer = scanner.next();
-        if (answer.equalsIgnoreCase("Y")) {
+            System.out.println("Is this the profile you want to edit?");
+            System.out.println("Y/N");
+            String answer = scanner.next();
+            if (answer.equalsIgnoreCase("Y")) {
 
-            System.out.println("Enter new input to edit or press ENTER to not edit");
-            System.out.println("Enter new firstname");
-            scanner.nextLine();
-            String newFirstName = scanner.nextLine();
-            if (!newFirstName.equals("")) {
-                usersList.get(profileIndex).setFirstName(newFirstName);
-            }
-            System.out.println("Enter new lastname");
-            String newLastName = scanner.nextLine();
-            if (!newLastName.equals("")) {
-                usersList.get(profileIndex).setLastName(newLastName);
-            }
-            System.out.println("enter new age");
-            String newAge = scanner.nextLine();
-            if (!newAge.equals("")) {
-                usersList.get(profileIndex).setAge(newAge);
-            }
-            System.out.println("enter new phone number");
-            String newPhoneNumber = scanner.nextLine();
-            if (!newPhoneNumber.equals("")) {
-                usersList.get(profileIndex).setPhoneNumber(newPhoneNumber);
-            }
-            System.out.println("enter new city");
-            String newCity = scanner.nextLine();
-            if (!newCity.equals("")) {
-                usersList.get(profileIndex).setCity(newCity);
-            }
-            System.out.println("enter new postal code");
-            String newPostalCode = scanner.nextLine();
-            if (!newPostalCode.equals("")) {
-                usersList.get(profileIndex).setPostalCode(newPostalCode);
-            }
-            System.out.println("enter new street name");
-            String newStreetName = scanner.nextLine();
-            if (!newStreetName.equals("")) {
-                usersList.get(profileIndex).setStreetName(newStreetName);
-            }
-            System.out.println("enter new port number");
-            String newPortNumber = scanner.nextLine();
-            if (!newPortNumber.equals("")) {
-                usersList.get(profileIndex).setPortNumber(newPortNumber);
-            }
-        }
+                System.out.println("Enter new input to edit or press ENTER to not edit");
 
-    }
-
-    @Override
-    public int removeProfile() {
-
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Select profile index");
-        System.out.println("available index numbers");
-        for (int i = 0; i < usersList.size() ; i++) {
-            System.out.println(i);
-        }
-
-        int profileIndex = scanner.nextInt();
-
-        if (profileIndex < usersList.size() && profileIndex >= 0) {
-            usersList.remove(profileIndex);
-            System.out.println("profile "+profileIndex+" has been deleted");
+                System.out.println("Enter new firstname");
+                scanner.nextLine();
+                String newFirstName = scanner.nextLine();
+                if (!newFirstName.equals("")) {
+                    usersList.get(profileIndex).setFirstName(newFirstName);
+                }
+                System.out.println("Enter new lastname");
+                String newLastName = scanner.nextLine();
+                if (!newLastName.equals("")) {
+                    usersList.get(profileIndex).setLastName(newLastName);
+                }
+                System.out.println("enter new age");
+                String newAge = scanner.nextLine();
+                if (!newAge.equals("")) {
+                    usersList.get(profileIndex).setAge(newAge);
+                }
+                System.out.println("enter new phone number");
+                String newPhoneNumber = scanner.nextLine();
+                if (!newPhoneNumber.equals("")) {
+                    usersList.get(profileIndex).setPhoneNumber(newPhoneNumber);
+                }
+                System.out.println("enter new city");
+                String newCity = scanner.nextLine();
+                if (!newCity.equals("")) {
+                    usersList.get(profileIndex).setCity(newCity);
+                }
+                System.out.println("enter new postal code");
+                String newPostalCode = scanner.nextLine();
+                if (!newPostalCode.equals("")) {
+                    usersList.get(profileIndex).setPostalCode(newPostalCode);
+                }
+                System.out.println("enter new street name");
+                String newStreetName = scanner.nextLine();
+                if (!newStreetName.equals("")) {
+                    usersList.get(profileIndex).setStreetName(newStreetName);
+                }
+                System.out.println("enter new port number");
+                String newPortNumber = scanner.nextLine();
+                if (!newPortNumber.equals("")) {
+                    usersList.get(profileIndex).setPortNumber(newPortNumber);
+                }
+            }
         } else {
             System.out.println("Invalid index number");
             System.out.println("Returning to menu");
         }
 
-        return profileIndex;
+    }
+
+    @Override
+    public void removeProfile() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("search for the profile you want to remove");
+        searchProfile();
+        System.out.println("select the index number of the profile you want to remove");
+
+        int profileIndex = scanner.nextInt();
+
+
+        if (profileIndex < usersList.size()) {
+
+            String completeProfile =
+                    "Firstname: "+usersList.get(profileIndex).getFirstName()+
+                            "\nLastname: "+usersList.get(profileIndex).getLastName()+
+                            "\nAge: "+usersList.get(profileIndex).getAge()+
+                            "\nPhone number: "+usersList.get(profileIndex).getPhoneNumber()+
+                            "\nCity: " +usersList.get(profileIndex).getCity()+
+                            "\nPostal code: "+usersList.get(profileIndex).getPostalCode()+
+                            "\nStreet name: "+usersList.get(profileIndex).getStreetName()+
+                            "\nPort Number: "+usersList.get(profileIndex).getPortNumber();
+            System.out.println();
+            System.out.println(completeProfile);
+            System.out.println();
+
+            System.out.println("Is this the profile you want to edit?");
+            System.out.println("Y/N");
+            String answer = scanner.next();
+            if (answer.equalsIgnoreCase("y")) {
+
+                usersList.remove(profileIndex);
+                System.out.println("profile "+profileIndex+" has been deleted");
+            }
+        } else {
+            System.out.println("Invalid index number");
+            System.out.println("Returning to menu");
+        }
+
+
+
+
     }
 
     @Override
@@ -215,6 +243,8 @@ public class Profile implements ProfileOperations{
 
             String selectOption = scanner.next();
 
+            int index = 0;
+
             switch (selectOption) {
 
                 case "1" -> {
@@ -223,10 +253,12 @@ public class Profile implements ProfileOperations{
                     for (User u: usersList) {
 
                         if (u.getFirstName().contains(keyword)) {
+                            System.out.println("Index value of profile "+index);
                             completeProfile(u);
                         } else {
                             System.out.println("Found no profiles that matches your search in the system");
                         }
+                        index++;
                     }
                     whileBoolean = false;
                 }
@@ -236,10 +268,13 @@ public class Profile implements ProfileOperations{
                     for (User u: usersList) {
 
                         if (u.getLastName().contains(keyword)) {
+                            System.out.println("Index value of profile "+index);
+
                             completeProfile(u);
                         } else {
                             System.out.println("Found no profiles that matches your search in the system");
                         }
+                        index++;
                     }
                     whileBoolean = false;
                 }
@@ -249,10 +284,13 @@ public class Profile implements ProfileOperations{
                     for (User u: usersList) {
 
                         if (u.getStreetName().contains(keyword)) {
+                            System.out.println("Index value of profile "+index);
+
                             completeProfile(u);
                         } else {
                             System.out.println("Found no profiles that matches your search in the system");
                         }
+                        index++;
                     }
                     whileBoolean = false;
                 }
@@ -260,6 +298,8 @@ public class Profile implements ProfileOperations{
                     System.out.println("Enter keyword for search");
                     String keyword = scanner.next();
                     for (User u: usersList) {
+
+                        System.out.println("Index value of profile "+index);
 
 
                         if (u.getFirstName().contains(keyword)) {
@@ -281,6 +321,7 @@ public class Profile implements ProfileOperations{
                         } else {
                             System.out.println("Found no profiles that matches your search in the system");
                         }
+                        index++;
                     }
                     whileBoolean = false;
                 }
@@ -289,7 +330,7 @@ public class Profile implements ProfileOperations{
     }
 
     private void completeProfile(User u) {
-        System.out.println("profile found");
+
         String completeProfile =
                         "Firstname: "+u.getFirstName()+
                         "\nLastname: "+u.getLastName()+
