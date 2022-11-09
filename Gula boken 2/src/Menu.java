@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Menu {
+public class Menu{
 
     void addMenu() {
 
@@ -32,6 +32,7 @@ public class Menu {
                             }
 
                             case "2" -> {
+                                //searching for profiles
                                 p.searchProfile();
                             }
 
@@ -110,5 +111,4 @@ public class Menu {
             }
         }
     }
-
 }
