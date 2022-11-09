@@ -39,7 +39,6 @@ public class Profile implements ProfileOperations{
                 .portNumber(portNumber)
                 .build();
 
-
         return user;
     }
 
@@ -134,7 +133,6 @@ public class Profile implements ProfileOperations{
             System.out.println("Invalid index number");
             System.out.println("Returning to menu");
         }
-
     }
 
     @Override
@@ -175,10 +173,6 @@ public class Profile implements ProfileOperations{
             System.out.println("Invalid index number");
             System.out.println("Returning to menu");
         }
-
-
-
-
     }
 
     @Override
@@ -222,8 +216,6 @@ public class Profile implements ProfileOperations{
             }
         }
     }
-
-
 
     @Override
     public void searchProfile() {
