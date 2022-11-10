@@ -12,21 +12,21 @@ public class Profile implements ProfileOperations{
 
         System.out.println();
         System.out.println("Enter first name");
-        String firsName = scanner.next();
+        String firsName = scanner.next().toLowerCase();
         System.out.println("Enter last name");
-        String lastName = scanner.next();
+        String lastName = scanner.next().toLowerCase();
         System.out.println("Enter age");
-        String age = scanner.next();
+        String age = scanner.next().toLowerCase();
         System.out.println("Enter phone number");
-        String phoneNumber = scanner.next();
+        String phoneNumber = scanner.next().toLowerCase();
         System.out.println("Enter city name");
-        String city = scanner.next();
+        String city = scanner.next().toLowerCase();
         System.out.println("Enter postal code");
-        String postalCode = scanner.next();
+        String postalCode = scanner.next().toLowerCase();
         System.out.println("Enter street name");
-        String streetName = scanner.next();
+        String streetName = scanner.next().toLowerCase();
         System.out.println("Enter port number");
-        String portNumber = scanner.next();
+        String portNumber = scanner.next().toLowerCase();
 
         User user = new UserBuilder()
                 .firstName(firsName)
@@ -89,42 +89,42 @@ public class Profile implements ProfileOperations{
 
                 System.out.println("Enter new firstname");
                 scanner.nextLine();
-                String newFirstName = scanner.nextLine();
+                String newFirstName = scanner.nextLine().toLowerCase();
                 if (!newFirstName.equals("")) {
                     usersList.get(profileIndex).setFirstName(newFirstName);
                 }
                 System.out.println("Enter new lastname");
-                String newLastName = scanner.nextLine();
+                String newLastName = scanner.nextLine().toLowerCase();
                 if (!newLastName.equals("")) {
                     usersList.get(profileIndex).setLastName(newLastName);
                 }
                 System.out.println("enter new age");
-                String newAge = scanner.nextLine();
+                String newAge = scanner.nextLine().toLowerCase();
                 if (!newAge.equals("")) {
                     usersList.get(profileIndex).setAge(newAge);
                 }
                 System.out.println("enter new phone number");
-                String newPhoneNumber = scanner.nextLine();
+                String newPhoneNumber = scanner.nextLine().toLowerCase();
                 if (!newPhoneNumber.equals("")) {
                     usersList.get(profileIndex).setPhoneNumber(newPhoneNumber);
                 }
                 System.out.println("enter new city");
-                String newCity = scanner.nextLine();
+                String newCity = scanner.nextLine().toLowerCase();
                 if (!newCity.equals("")) {
                     usersList.get(profileIndex).setCity(newCity);
                 }
                 System.out.println("enter new postal code");
-                String newPostalCode = scanner.nextLine();
+                String newPostalCode = scanner.nextLine().toLowerCase();
                 if (!newPostalCode.equals("")) {
                     usersList.get(profileIndex).setPostalCode(newPostalCode);
                 }
                 System.out.println("enter new street name");
-                String newStreetName = scanner.nextLine();
+                String newStreetName = scanner.nextLine().toLowerCase();
                 if (!newStreetName.equals("")) {
                     usersList.get(profileIndex).setStreetName(newStreetName);
                 }
                 System.out.println("enter new port number");
-                String newPortNumber = scanner.nextLine();
+                String newPortNumber = scanner.nextLine().toLowerCase();
                 if (!newPortNumber.equals("")) {
                     usersList.get(profileIndex).setPortNumber(newPortNumber);
                 }
@@ -241,7 +241,7 @@ public class Profile implements ProfileOperations{
 
                 case "1" -> {
                     System.out.println("Enter keyword for search");
-                    String keyword = scanner.next();
+                    String keyword = scanner.next().toLowerCase();
                     for (User u: usersList) {
 
                         if (u.getFirstName().contains(keyword)) {
